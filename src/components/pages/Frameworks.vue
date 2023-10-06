@@ -1,10 +1,33 @@
 <template>
-  <p>FrameworksPage</p>
+  <Framework :frameworks="frameworks"/>
 </template>
 
 <script>
+import Framework from '@/components/shared/Framework.vue'
+import { frameworks } from "@/mock/frameworks-page/frameworks";
+
 export default {
 	name: 'FrameworksPage',
+  components: {
+    Framework,
+  },
+  data() {
+    return {
+      frameworks: []
+    }
+  },
+  methods: {
+    async getFrameworks() {
+      try {
+        this.frameworks = frameworks
+      } catch (e) {
+        console.log(e)
+      }
+    }
+  },
+  mounted() {
+    this.getFrameworks()
+  }
 }
 </script>
 
