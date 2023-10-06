@@ -4,11 +4,11 @@
 			<img src="@/assets/logo.svg" alt="" class="logo-img" />
 		</div>
 		<nav>
-			<button>HOME</button>
-			<button>ABOUT US</button>
-			<button>FRAMEWORKS</button>
-			<button>APPLICATIONS</button>
-			<button>CONTACT US</button>
+      <RouterLink to="/home">HOME</RouterLink>
+      <RouterLink to="/about">ABOUT US</RouterLink>
+      <RouterLink to="/frameworks">FRAMEWORKS</RouterLink>
+      <RouterLink to="/applications">APPLICATIONS</RouterLink>
+      <RouterLink to="/contact">CONTACT US</RouterLink>
 		</nav>
 	</header>
 </template>
@@ -46,7 +46,7 @@ nav {
 	align-self: center;
 }
 
-button {
+a {
 	margin: 0 10px;
 	text-decoration: none;
 	color: #3d3d3d;
