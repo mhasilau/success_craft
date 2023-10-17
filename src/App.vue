@@ -1,16 +1,7 @@
 <template>
   <div class="main">
-<!--    <div class="header">-->
-<!--      <p>header</p>-->
-<!--    </div>-->
-<!--    <div class="body">-->
-<!--      <p>body</p>-->
-<!--    </div>-->
-<!--    <div class="footer">-->
-<!--      <p>footer</p>-->
-<!--    </div>-->
-    <AppHeader/>
-    <RouterView/>
+    <AppHeader />
+    <RouterView />
     <AppFooter class="footer" />
   </div>
 </template>
@@ -30,19 +21,12 @@ export default {
 
 <style scoped lang="scss">
   .main {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    .header {
 
-    }
-    .body {
-
-    }
     .footer {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
+      margin-top: auto;
     }
   }
 </style>
