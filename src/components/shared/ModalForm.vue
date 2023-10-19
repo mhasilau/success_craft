@@ -17,7 +17,7 @@ export default {
   emits: ['close'],
   methods: {
     closeForm() {
-      this.$emit('close')
+      this.$emit('close', false)
     }
   }
 }
