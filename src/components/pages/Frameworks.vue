@@ -1,34 +1,34 @@
 <template>
-  <Framework :frameworks="frameworks"/>
+  <FrameworkComp :frameworks="frameworks"/>
 </template>
 
 <script>
-import Framework from '@/components/shared/Framework.vue'
-import { frameworks } from "@/mock/frameworks-page/frameworks";
+import FrameworkComp from '@/components/shared/Framework.vue';
+import { frameworks } from '@/mock/frameworks-page/frameworks';
 
 export default {
-	name: 'FrameworksPage',
+  name: 'FrameworksPage',
   components: {
-    Framework,
+    FrameworkComp,
   },
   data() {
     return {
-      frameworks: []
-    }
+      frameworks: [],
+    };
   },
   methods: {
     async getFrameworks() {
       try {
-        this.frameworks = frameworks
+        this.frameworks = frameworks;
       } catch (e) {
-        console.log(e)
+        console.log(e);
       }
-    }
+    },
   },
   mounted() {
-    this.getFrameworks()
-  }
-}
+    this.getFrameworks();
+  },
+};
 </script>
 
 <style></style>

@@ -4,8 +4,8 @@
 
 <script>
 export default {
-	name: 'AppsPage',
-}
+  name: 'AppsPage',
+};
 </script>
 
 <style></style>

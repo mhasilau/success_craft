@@ -2,25 +2,26 @@
   <div class="modal">
     <div class="entries">
       <slot></slot>
-      <Button @click="closeForm" type="primary">Close</Button>
+        <ButtonComp type="primary" class="confirm"  @click="closeForm">Close</ButtonComp>
     </div>
   </div>
 </template>
 
 <script>
-import Button from "@/components/shared/Buttons.vue";
+import ButtonComp from '@/components/shared/Buttons.vue';
+
 export default {
   components: {
-    Button
+    ButtonComp,
   },
   name: 'ModalForm',
   emits: ['close'],
   methods: {
     closeForm() {
-      this.$emit('close', false)
-    }
-  }
-}
+      this.$emit('close', false);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -37,12 +38,19 @@ export default {
 
     .entries {
       width: 60%;
-      height: 60%;
+      //height: 60%;
       background-color: cornsilk;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding: 20px 0;
+
+      .confirm {
+        //position: relative;
+        //bottom: 10px;
+        align-self: self-end;
+      }
     }
   }
 </style>

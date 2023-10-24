@@ -1,7 +1,7 @@
 <template>
-  <div class="framework" v-for="framework in frameworks">
+  <div v-for="framework in frameworks" :key="framework.id" class="framework">
 
-    <div class="odd" v-if="framework.id%2===1">
+    <div v-if="framework.id%2===1" class="odd">
       <div class="pic">
         <img :src=[framework.pic] alt="">
       </div>
@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <div class="even" v-else>
+    <div v-else class="even">
       <div class="about">
         <div>
           <h1>{{framework.name}}</h1>
@@ -29,8 +29,8 @@
         </div>
 
         <div class="buttons">
-          <Button :type="'primary'"><a :href=[framework.link]>Read more</a></Button>
-          <Button :type="'text'">Webinar</Button>
+          <ButtonComp :type="'primary'"><a :href=[framework.link]>Read more</a></ButtonComp>
+          <ButtonComp :type="'text'">Webinar</ButtonComp>
         </div>
       </div>
       <div class="pic">
@@ -42,19 +42,20 @@
 </template>
 
 <script>
-import Button from './Buttons.vue'
+import ButtonComp from './Buttons.vue';
+
 export default {
-  name: 'Framework',
+  name: 'FrameworkComp',
   components: {
-    Button,
+    ButtonComp,
   },
   props: {
     frameworks: {
       type: Array,
-      required: true
-    }
-  }
-}
+      required: true,
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
