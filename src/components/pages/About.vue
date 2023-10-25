@@ -4,6 +4,7 @@
       <div class="desc">
         <h1>About us</h1>
         <div class="demo-collapse">
+
           <el-collapse
               v-for="item in items"
               :key="item" accordion
@@ -25,12 +26,15 @@
     </div>
     <div class="video">
       <iframe
-        src="https://www.youtube.com/embed/2gwDjMqJepQ?si=au_E6La_oxdye3gz"
-        title="YouTube video player"
-        allow="accelerometer;
-        autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
+          src="https://www.youtube.com/embed/2gwDjMqJepQ?si=au_E6La_oxdye3gz"
+          title="YouTube video player"
+          allow="accelerometer;
+          autoplay; clipboard-write;
+          ncrypted-media;
+          gyroscope;
+          picture-in-picture;
+          web-share"
+          allowfullscreen></iframe>
     </div>
   </div>
 </template>
