@@ -8,8 +8,8 @@
 
 <script>
 export default {
-  name: 'AppFooter'
-}
+  name: 'AppFooter',
+};
 </script>
 
 <style lang="scss" scoped>

@@ -21,6 +21,7 @@ import { applications } from '@/mock/applications-page/applications';
 
 export default {
   name: 'AppsPage',
+
   data() {
     return {
       applications,

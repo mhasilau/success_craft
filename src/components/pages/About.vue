@@ -4,7 +4,11 @@
       <div class="desc">
         <h1>About us</h1>
         <div class="demo-collapse">
-          <el-collapse v-for="item in items" :key="item.id" accordion>
+
+          <el-collapse
+              v-for="item in items"
+              :key="item" accordion
+          >
             <el-collapse-item
                 :title=item.title
                 :name=item.id
