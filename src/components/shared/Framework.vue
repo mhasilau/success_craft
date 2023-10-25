@@ -13,8 +13,8 @@
           </p>
         </div>
         <div class="buttons">
-          <Button :type="'primary'"><a :href=[framework.link]>Read more</a></Button>
-          <Button :type="'text'">Webinar</Button>
+          <ButtonComp :type="'primary'"><a :href=[framework.link]>Read more</a></ButtonComp>
+          <ButtonComp :type="'text'">Webinar</ButtonComp>
         </div>
       </div>
     </div>
