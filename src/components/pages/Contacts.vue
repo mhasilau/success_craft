@@ -5,9 +5,9 @@
       <el-form-item>
         <label>First Name *</label>
         <el-input
+            v-model="v$.form.fName.$model"
             placeholder="Enter Your First Name"
             input-style="'red'"
-            v-model="v$.form.fName.$model"
         />
         <div class="error">
           <small
@@ -22,8 +22,8 @@
       <el-form-item>
         <label>Last Name *</label>
         <el-input
-            placeholder="Enter Your Last Name"
             v-model="v$.form.lName.$model"
+            placeholder="Enter Your Last Name"
         />
         <div class="error">
           <small
@@ -38,8 +38,8 @@
       <el-form-item>
         <label>Company *</label>
         <el-input
-            placeholder="Enter Your Company"
             v-model="v$.form.company.$model"
+            placeholder="Enter Your Company"
         />
         <div class="error">
           <small
@@ -54,8 +54,8 @@
       <el-form-item>
         <label>Email *</label>
         <el-input
-            placeholder="Enter Your Email"
             v-model="v$.form.email.$model"
+            placeholder="Enter Your Email"
         />
         <div class="error">
           <small
@@ -70,7 +70,7 @@
       <el-form-item>
         <label>Job Title *</label>
         <el-input
-            placeholder="Enter Job Title" v-model="v$.form.job.$model"
+            v-model="v$.form.job.$model" placeholder="Enter Job Title"
         />
         <div class="error">
           <small v-if="v$.form.job.$error" class="error">Job field has an error.</small>
@@ -101,7 +101,7 @@
 
       <el-form-item>
         <label>State *</label>
-        <el-input placeholder="Enter Your State" v-model="v$.form.state.$model"
+        <el-input v-model="v$.form.state.$model" placeholder="Enter Your State"
         />
         <div class="error">
           <small v-if="v$.form.state.$error" class="error">State field has an error.</small>
@@ -111,8 +111,8 @@
       <el-form-item>
         <label>Zip code *</label>
         <el-input
-            placeholder="Enter Your Zip Code"
             v-model.trim.number="v$.form.zipCode.$model"
+            placeholder="Enter Your Zip Code"
         />
         <div class="error">
           <small v-if="v$.form.zipCode.$error" class="error">Zip code field has an error.</small>
@@ -122,24 +122,26 @@
     </el-form>
 
   </div>
-  <Button :type="'primary'" class="center" @click="sendData">Submit</Button>
+  <ButtonComp :type="'primary'" class="center" @click="sendData">Submit</ButtonComp>
   <ModalForm v-if="showModal" @close="showAndCloseForm">
     <ModalContactUs :form="form"/>
   </ModalForm>
 </template>
 
 <script>
-import { email, required, minLength, numeric } from '@vuelidate/validators'
-import { useVuelidate } from '@vuelidate/core'
-import Button from '@/components/shared/Buttons.vue'
-import ModalForm from '@/components/shared/ModalForm.vue'
-import ModalContactUs from "@/components/shared/modal/ModalContactUs.vue";
+import { useVuelidate } from '@vuelidate/core';
+import {
+  email, required, minLength, numeric,
+} from '@vuelidate/validators';
+import ButtonComp from '@/components/shared/Buttons.vue';
+import ModalForm from '@/components/shared/ModalForm.vue';
+import ModalContactUs from '@/components/shared/modal/ModalContactUs.vue';
 
-import {countries} from "@/mock/contries";
+import { countries } from '@/mock/contries';
 
 export default {
   name: 'ContactPage',
-  components: { Button, ModalForm, ModalContactUs },
+  components: { ButtonComp, ModalForm, ModalContactUs },
   data() {
     return {
       form: {
@@ -152,14 +154,14 @@ export default {
         state: '',
         zipCode: '',
       },
-      countries: countries,
-      showModal: false
-    }
+      countries,
+      showModal: false,
+    };
   },
   setup() {
     return {
-      v$: useVuelidate()
-    }
+      v$: useVuelidate(),
+    };
   },
   validations() {
     return {
@@ -178,7 +180,7 @@ export default {
         },
         email: {
           required,
-          email
+          email,
         },
         job: {
           required,
@@ -194,10 +196,10 @@ export default {
         zipCode: {
           required,
           minLength: minLength(2),
-          numeric
+          numeric,
         },
-      }
-    }
+      },
+    };
   },
   methods: {
     async sendData() {
@@ -213,19 +215,18 @@ export default {
       // }
       //
       // this.postData(newForm) // send form to server
-      const result = await this.v$.$validate()
+      const result = await this.v$.$validate();
       if (!result) {
-        this.v$.$touch()
-        return
+        this.v$.$touch();
+        return;
       }
 
-      this.showAndCloseForm(true)
-
+      this.showAndCloseForm(true);
     },
     showAndCloseForm(event) {
-      this.showModal = !this.showModal
+      this.showModal = !this.showModal;
       if (!event) {
-        this.v$.$reset()
+        this.v$.$reset();
         this.form = {
           fName: '',
           lName: '',
@@ -235,11 +236,11 @@ export default {
           country: '',
           state: '',
           zipCode: '',
-        }
+        };
       }
     },
-  }
-}
+  },
+};
 </script>
 
 <style scoped lang="scss">
