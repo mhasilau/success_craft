@@ -1,21 +1,21 @@
 <template>
-	<div class="btns">
-		<el-button class="button" :type=type>
+  <div class="btns">
+    <el-button class="button" :type=type>
       <slot></slot>
     </el-button>
-	</div>
+  </div>
 </template>
 
 <script>
 export default {
-	name: 'Button',
+  name: 'ButtonComp',
   props: {
     type: {
       type: String,
-      required: true
-    }
-  }
-}
+      required: true,
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">

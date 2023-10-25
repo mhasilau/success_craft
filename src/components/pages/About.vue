@@ -4,7 +4,7 @@
       <div class="desc">
         <h1>About us</h1>
         <div class="demo-collapse">
-          <el-collapse accordion v-for="item in items">
+          <el-collapse v-for="item in items" :key="item.id" accordion>
             <el-collapse-item
                 :title=item.title
                 :name=item.id
@@ -15,8 +15,8 @@
         </div>
       </div>
       <div class="buttons">
-        <Button :type="'primary'">Read more</Button>
-        <Button :type="'text'">Contact Us</Button>
+        <ButtonComp :type="'primary'">Read more</ButtonComp>
+        <ButtonComp :type="'text'">Contact Us</ButtonComp>
       </div>
 
     </div>
@@ -24,33 +24,38 @@
       <iframe
           src="https://www.youtube.com/embed/2gwDjMqJepQ?si=au_E6La_oxdye3gz"
           title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allow="accelerometer;
+          autoplay; clipboard-write;
+          ncrypted-media;
+          gyroscope;
+          picture-in-picture;
+          web-share"
           allowfullscreen></iframe>
     </div>
   </div>
 </template>
 
 <script>
-import Button from '@/components/shared/Buttons.vue'
-import { about } from '@/mock/about-page/about'
+import ButtonComp from '@/components/shared/Buttons.vue';
+import { about } from '@/mock/about-page/about';
+
 export default {
-	name: 'AboutPage',
+  name: 'AboutPage',
   components: {
-    Button,
+    ButtonComp,
   },
   data() {
     return {
-      items: about
-    }
-  }
-}
+      items: about,
+    };
+  },
+};
 </script>
 
 <style scoped lang="scss">
 .about {
   display: flex;
   justify-content: space-evenly;
-  //width: 100%;
 
   .text {
     width: 50%;
