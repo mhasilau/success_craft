@@ -20,6 +20,10 @@ export default {
   text-align: center;
   color: white;
 
+  img {
+    width: 100%;
+  }
+
   .text {
     font-size: larger;
     position: absolute;
