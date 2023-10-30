@@ -16,21 +16,22 @@ export default {
 
 <style lang="scss" scoped>
 nav {
-  width: 70%;
+  width: 20%;
   display: flex;
   flex-direction: row;
   justify-content: end;
   align-self: center;
-}
+  text-align-last: end;
 
-a {
-  padding: 0 10px;
-  text-decoration: none;
-  color: #3d3d3d;
-}
-a:hover {
-  background-color: #3d3d3d;
-  color: white;
+  a {
+    padding: 0 10px;
+    text-decoration: none;
+    color: #3d3d3d;
+  }
+  a:hover {
+    background-color: #3d3d3d;
+    color: white;
+  }
 }
 
 @media (max-width: 900px) {

@@ -77,4 +77,17 @@ export default {
     }
   }
 }
+
+@media (max-width: 900px) {
+
+  .about {
+    flex-direction: column-reverse;
+    align-items: center;
+
+    .video, .text {
+      width: 80%;
+    }
+  }
+
+}
 </style>

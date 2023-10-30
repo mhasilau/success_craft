@@ -3,15 +3,8 @@
     <div class="logo">
       <img src="@/assets/logo.svg" alt="" class="logo-img" />
     </div>
-<!--    <nav>-->
-<!--      <RouterLink to="/home">HOME</RouterLink>-->
-<!--      <RouterLink to="/about">ABOUT US</RouterLink>-->
-<!--      <RouterLink to="/frameworks">FRAMEWORKS</RouterLink>-->
-<!--      <RouterLink to="/applications">APPLICATIONS</RouterLink>-->
-<!--      <RouterLink to="/contact">CONTACT US</RouterLink>-->
-<!--    </nav>-->
-    <MainMenu class="main-menu"></MainMenu>
-    <MiniMenu class="mini-menu"></MiniMenu>
+    <MainMenu v-if="width > 900" class="main-menu"></MainMenu>
+    <MiniMenu v-else class="mini-menu"></MiniMenu>
   </header>
 </template>
 
@@ -24,6 +17,16 @@ export default {
   components: {
     MiniMenu,
     MainMenu,
+  },
+  mounted() {
+    addEventListener('resize', (ev) => {
+      this.width = ev.target.innerWidth;
+    });
+  },
+  data() {
+    return {
+      width: window.innerWidth,
+    };
   },
 };
 </script>
@@ -57,15 +60,16 @@ header {
 
 @media (max-width: 900px) {
 
-  .main-menu {
-    display: none;
-  }
-
-  .mini-menu {
-    display: block;
-  }
   header {
     justify-content: flex-start;
+
+    .main-menu {
+      display: none;
+    }
+
+    .mini-menu {
+      display: block;
+    }
   }
 }
 

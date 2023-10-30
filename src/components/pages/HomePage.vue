@@ -16,6 +16,7 @@ export default {
 
 <style scoped lang="scss">
 .info {
+  padding: 5%;
   position: relative;
   text-align: center;
   color: white;

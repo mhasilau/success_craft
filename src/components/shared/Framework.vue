@@ -80,4 +80,11 @@ export default {
     width: 100%;
   }
 }
+@media (max-width: 900px) {
+
+  .odd, .even {
+      display: block;
+      align-self: start;
+    }
+  }
 </style>
