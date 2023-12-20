@@ -1,13 +1,13 @@
 <template>
   <h1 class="center">Contact Us</h1>
   <div class="contact-us">
-    <el-form label-width="120px" class="form" @submit.prevent="sendData">
+    <el-form class="form" label-width="120px" @submit.prevent="sendData">
       <el-form-item>
         <label>First Name *</label>
         <el-input
             v-model="v$.form.fName.$model"
-            placeholder="Enter Your First Name"
             input-style="'red'"
+            placeholder="Enter Your First Name"
         />
         <div class="error">
           <small
@@ -82,10 +82,10 @@
         <el-select
             v-model="v$.form.country.$model"
             filterable
-            remote
-            reserve-keyword
             placeholder="Enter Your Country"
+            remote
             remote-show-suffix
+            reserve-keyword
         >
           <el-option
               v-for="item in countries"
@@ -131,12 +131,19 @@
 <script>
 import { useVuelidate } from '@vuelidate/core';
 import {
-  email, required, minLength, numeric,
+  email,
+  minLength,
+  numeric,
+  required,
 } from '@vuelidate/validators';
+// eslint-disable-next-line import/no-unresolved
 import ButtonComp from '@/components/shared/Buttons.vue';
+// eslint-disable-next-line import/no-unresolved
 import ModalForm from '@/components/shared/ModalForm.vue';
+// eslint-disable-next-line import/no-unresolved
 import ModalContactUs from '@/components/shared/modal/ModalContactUs.vue';
 
+// eslint-disable-next-line import/extensions,import/no-unresolved
 import { countries } from '@/mock/contries';
 
 export default {
@@ -243,7 +250,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .center {
   text-align: center;
 }
@@ -256,9 +263,11 @@ export default {
 .form {
   display: grid;
   grid-template-columns: repeat(4, 25%);
-  margin-right: 120px;
+  margin-right: 20px;
   text-align: center;
 }
+
+// .el-form.el-form-item.el-form-item__content - инлайн стиль. перебить не могу (margin-left: 120px)
 
 .contact-us {
   flex-direction: column;

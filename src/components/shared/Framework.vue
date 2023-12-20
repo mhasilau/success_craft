@@ -3,7 +3,7 @@
 
     <div v-if="framework.id%2===1" class="odd">
       <div class="about">
-        <div class="f">
+        <div class="body">
           <div class="pic">
             <img :src=[framework.pic] alt="">
           </div>
@@ -25,7 +25,7 @@
 
     <div v-else class="even">
       <div class="about">
-        <div class="f">
+        <div class="body">
           <div>
             <h1>{{ framework.name }}</h1>
             <p>
@@ -78,9 +78,17 @@ export default {
 .about {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  //justify-content: space-between;
   padding: 20px;
-  width: 40%;
+  width: 80%;
+
+  .body {
+    display: flex;
+    //flex-direction: column;
+    //justify-content: space-between;
+    //padding: 20px;
+    //width: 40%;
+  }
 }
 
 .pic {
@@ -103,7 +111,7 @@ export default {
     .about {
       width: 90%;
 
-      .f {
+      .body {
         display: flex;
         width: 100%;
 

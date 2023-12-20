@@ -29,7 +29,7 @@ export default {
   min-width: 400px;
 
   .footer {
-    margin-top: 5px;
+    margin-top: auto;
   }
 }
 </style>
