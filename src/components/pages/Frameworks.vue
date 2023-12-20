@@ -3,7 +3,9 @@
 </template>
 
 <script>
+// eslint-disable-next-line import/no-unresolved
 import FrameworkComp from '@/components/shared/Framework.vue';
+// eslint-disable-next-line import/extensions,import/no-unresolved
 import { frameworks } from '@/mock/frameworks-page/frameworks';
 
 export default {
@@ -21,7 +23,7 @@ export default {
       try {
         this.frameworks = frameworks;
       } catch (e) {
-        console.log(e);
+        alert(e.message);
       }
     },
   },

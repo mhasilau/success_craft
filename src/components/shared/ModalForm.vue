@@ -8,6 +8,7 @@
 </template>
 
 <script>
+// eslint-disable-next-line import/no-unresolved
 import ButtonComp from '@/components/shared/Buttons.vue';
 
 export default {
@@ -38,7 +39,6 @@ export default {
 
     .entries {
       width: 60%;
-      //height: 60%;
       background-color: cornsilk;
       display: flex;
       flex-direction: column;
@@ -47,8 +47,6 @@ export default {
       padding: 20px 0;
 
       .confirm {
-        //position: relative;
-        //bottom: 10px;
         align-self: self-end;
       }
     }

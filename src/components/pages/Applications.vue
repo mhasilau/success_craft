@@ -7,7 +7,7 @@
           <img :src=[item.img] alt="">
         </div>
         <div class="title">
-          <p>{{item.title}}</p>
+          <p>{{ item.title }}</p>
         </div>
 
       </div>
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+// eslint-disable-next-line import/extensions,import/no-unresolved
 import { applications } from '@/mock/applications-page/applications';
 
 export default {
@@ -73,6 +74,14 @@ export default {
           text-align: center;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .apps {
+    .line {
+      display: block;
     }
   }
 }

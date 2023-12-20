@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <p>
-      ©2015-2022 Success Craft
+      ©2015-2023 Success Craft
     </p>
   </div>
 </template>
@@ -20,5 +20,6 @@ export default {
     background-color: #3d3d3d;
     color: white;
     align-items: center;
+    margin-top: 5px;
   }
 </style>

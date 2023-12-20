@@ -1,6 +1,6 @@
 <template>
   <div class="info">
-    <img src="@/assets/main-pic.png" alt="" />
+    <img src="@/assets/main-pic.png" alt=""/>
     <div class="text">
       <h1>Welcome to Test Page</h1>
       <p>Front-end developer</p>
@@ -16,9 +16,14 @@ export default {
 
 <style scoped lang="scss">
 .info {
+  padding: 5%;
   position: relative;
   text-align: center;
   color: white;
+
+  img {
+    width: 100%;
+  }
 
   .text {
     font-size: larger;
