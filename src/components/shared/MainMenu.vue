@@ -3,6 +3,7 @@
 </template>
 
 <script>
+// eslint-disable-next-line import/no-unresolved
 import AppLinks from '@/components/shared/AppLinks.vue';
 
 export default {
@@ -13,6 +14,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

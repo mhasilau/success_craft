@@ -13,7 +13,7 @@
                 :title=item.title
                 :name=item.id
             >
-              <div>{{item.body}}</div>
+              <div>{{ item.body }}</div>
             </el-collapse-item>
           </el-collapse>
         </div>
@@ -40,7 +40,9 @@
 </template>
 
 <script>
+// eslint-disable-next-line import/no-unresolved
 import ButtonComp from '@/components/shared/Buttons.vue';
+// eslint-disable-next-line import/extensions,import/no-unresolved
 import { about } from '@/mock/about-page/about';
 
 export default {
@@ -71,6 +73,7 @@ export default {
 
   .video {
     width: 40%;
+
     iframe {
       width: 100%;
       height: 45%;
@@ -79,7 +82,6 @@ export default {
 }
 
 @media (max-width: 900px) {
-
   .about {
     flex-direction: column-reverse;
     align-items: center;
@@ -87,7 +89,10 @@ export default {
     .video, .text {
       width: 80%;
     }
-  }
 
+    .buttons {
+      margin-bottom: 10px;
+    }
+  }
 }
 </style>

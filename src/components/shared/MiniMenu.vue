@@ -8,12 +8,14 @@
 
 <script>
 import { Menu } from '@element-plus/icons-vue';
+// eslint-disable-next-line import/no-unresolved
 import AppLinks from '@/components/shared/AppLinks.vue';
 
 export default {
   name: 'MiniMenu',
   components: {
     AppLinks,
+    // eslint-disable-next-line vue/no-reserved-component-names
     Menu,
   },
   props: {

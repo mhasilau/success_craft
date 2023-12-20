@@ -43,8 +43,8 @@
         />
         <div class="error">
           <small
-            v-if="v$.form.company.$error"
-            class="error"
+              v-if="v$.form.company.$error"
+              class="error"
           >
             Company field has an error.
           </small>
@@ -80,18 +80,18 @@
       <el-form-item>
         <label>Country *</label>
         <el-select
-          v-model="v$.form.country.$model"
-          filterable
-          remote
-          reserve-keyword
-          placeholder="Enter Your Country"
-          remote-show-suffix
+            v-model="v$.form.country.$model"
+            filterable
+            remote
+            reserve-keyword
+            placeholder="Enter Your Country"
+            remote-show-suffix
         >
           <el-option
-            v-for="item in countries"
-            :key="item.name"
-            :label="item.name"
-            :value="item.name"
+              v-for="item in countries"
+              :key="item.name"
+              :label="item.name"
+              :value="item.name"
           />
         </el-select>
         <div class="error">
@@ -214,7 +214,7 @@ export default {
       //   zipCode: this.form.zipCode,
       // }
       //
-      // this.postData(newForm) // send form to server
+      // this.postData(newForm) // TODO send form to server
       const result = await this.v$.$validate();
       if (!result) {
         this.v$.$touch();
@@ -247,10 +247,12 @@ export default {
 .center {
   text-align: center;
 }
+
 .contact-us {
   display: flex;
   justify-content: center;
 }
+
 .form {
   display: grid;
   grid-template-columns: repeat(4, 25%);
@@ -270,12 +272,19 @@ export default {
 .error {
   height: 35px;
   color: red;
-  //border: 1px solid;
   width: 100%;
   text-align: start;
 
   small {
     all: revert;
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-us {
+    form {
+      display: block;
+    }
   }
 }
 </style>

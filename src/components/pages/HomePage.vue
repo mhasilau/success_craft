@@ -1,6 +1,6 @@
 <template>
   <div class="info">
-    <img src="@/assets/main-pic.png" alt="" />
+    <img src="@/assets/main-pic.png" alt=""/>
     <div class="text">
       <h1>Welcome to Test Page</h1>
       <p>Front-end developer</p>
